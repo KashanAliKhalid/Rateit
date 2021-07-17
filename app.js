@@ -1,12 +1,14 @@
 var express= require("express"),
     bodyparser= require("body-parser");
-    _=require("underscore");
+_=require("underscore");
 var Promise = require("bluebird");
+let path = require('path');
 var mongoose = Promise.promisifyAll(require("mongoose"));
 mongoose.set('useCreateIndex', true); //avoids deprecation warning when using showschemna.index
 var app= express();
 app.use(express.static("Public")); //to use files from public folder
 app.use(bodyparser.urlencoded({extended: true}));
+app.set("views", path.join(__dirname, "..", "views"));
 app.set("view engine","ejs");
 var showname="";
 mongoose.connect("mongodb+srv://kashan:rateit@rateit.fl3km.mongodb.net/Rateit?retryWrites=true&w=majority",{useUnifiedTopology: true,useNewUrlParser: true, });
@@ -33,8 +35,7 @@ showScehma.index(
 var Show= mongoose.model("Show",showScehma);
 
 app.get("/", function (req,res) {
-   res.render("Homepage.ejs")
-
+   res.render("Homepage")
 });
 app.post("/selectshow",function (req,res) {
 showname= req.body.showname;
