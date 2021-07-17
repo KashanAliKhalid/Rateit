@@ -8,7 +8,7 @@ mongoose.set('useCreateIndex', true); //avoids deprecation warning when using sh
 var app= express();
 app.use(express.static("Public")); //to use files from public folder
 app.use(bodyparser.urlencoded({extended: true}));
-app.set("views", path.join(__dirname, "..", "views"));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine","ejs");
 var showname="";
 mongoose.connect("mongodb+srv://kashan:rateit@rateit.fl3km.mongodb.net/Rateit?retryWrites=true&w=majority",{useUnifiedTopology: true,useNewUrlParser: true, });
