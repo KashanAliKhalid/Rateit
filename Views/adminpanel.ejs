@@ -1,0 +1,21 @@
+<%- include("Partials/Header") %>
+<%- include("Partials/Sidenav")%>
+<style>body{
+        background: white}
+    form
+    {
+        margin-top: 80px;
+    }
+</style>
+<form method="post" action="/adminpanel">
+    <input name="showname_admin" type="text" placeholder="Enter Show name">
+    <input name="rating_admin" type="text" placeholder="Enter rating">
+    <input name="age_admin" type="text" placeholder="Enter age">
+    <input name="year_admin" type="text" placeholder="Enter year">
+    <input name="comment_admin" type="text" placeholder="Enter true or false">
+    <input name="country_admin" type="text" placeholder="Enter Country">
+    <input type="submit" >
+</form>
+
+
+<%- include("Partials/footer") %>

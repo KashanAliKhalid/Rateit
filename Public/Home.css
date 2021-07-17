@@ -1,0 +1,200 @@
+.sliderpicture
+{
+    object-fit: cover;
+}
+html body
+{
+    margin:0;
+    padding:0;
+}
+
+@media screen and (min-width: 1400px) {
+    .sliderpicture
+    {
+        height: 450px;
+    }
+}
+
+.reviewcontainer
+{
+    background:black;
+}
+
+.reviewcontainer h3
+{
+    margin-top:5px;
+    color:white;
+    font-family: "Lato", sans-serif;
+    text-decoration: underline;
+}
+
+.reviewcontainer span
+{
+    color:red;
+    text-decoration: underline;
+}
+
+.smallreview1
+{
+    background-image: url("batman.jpg");
+    background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    background-position: center;
+    -webkit-filter: brightness(100%);
+}
+
+.smallreview2
+{
+    background-image: url("badboys.jpg");
+    background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    background-position: center;
+}
+
+.smallreview3
+{
+    background-image: url("suicide.jpg");background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    background-position: center;
+    transition: all 0.3s ease-in;
+}
+
+.smallreview4
+{
+    background-image: url("redrum.jpg");
+    background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    background-position: center;
+    transition: all 0.3s ease-in;
+}
+
+.smallreview5
+{
+    background-image: url("notime.jpg");
+    background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    transition: filter 0.5s;
+    background-position: center;
+    transition: all 0.3s ease-in;
+}
+
+.smallreview6
+{
+    background-image: url("terminator.jpg");
+    background-size: cover;
+    height: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    background-position: center;
+}
+
+.smallreview1:hover
+{
+    background-image: url("batman2.jpg");
+}
+
+
+.smallreview2:hover
+{
+    background-image: url("badboys2.jpg");
+}
+
+
+.smallreview3:hover
+{
+    background-image: url("suicide2.jpg");
+}
+
+
+.smallreview4:hover
+{
+    background-image: url("redrum2.jpg");
+}
+
+.smallreview5:hover
+{
+    background-image: url("notime2.jpg");
+}
+
+.smallreview6:hover
+{
+    background-image: url("terminator2.jpg");
+}
+
+.reviewtext
+{
+    margin-top:5px;
+    font-family: "Lato", sans-serif;
+    font-weight:800;
+    font-size: 15px;
+    line-height: 22px;
+    color: #ffffff;
+}
+
+.reviewtext span
+{
+    font-weight:400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
+}
+
+.reviewbutton
+{
+    border: 1px solid white;
+    font-weight:800;
+    font-family: "Lato", sans-serif;
+    line-height: 31px;
+    font-size:12px;
+    color:#ffffff;
+    background: transparent;
+    width:120px;
+    transition: all 0.2s ease-in;
+    margin-top:3px
+}
+
+.reviewbutton:hover
+{
+    border: 1px solid yellow;
+}
+
+
+#buttondiv1
+{
+    display:none;
+    transition: all 0.6s ease-in;
+}
+
+#buttondiv2
+{
+    display:none;
+}
+
+#buttondiv3
+{
+    display:none;
+}
+
+#buttondiv4
+{
+    display:none;
+}
+
+#buttondiv5
+{
+    display:none;
+}
+
+#buttondiv6
+{
+    display:none;
+}

@@ -1,0 +1,224 @@
+<%- include("Partials/Header") %>
+<%- include("Partials/Sidenav") %>
+<script type="text/javascript" src="html2canvas.js"></script>
+
+<script>
+
+
+</script>
+<link rel="stylesheet" href="/Graphs.css" >
+<div id="maindiv" class="maindiv container"  onclick="closeNav()">
+<H1 class="mainheading h1 text-center"><%=name%> </H1>
+<!--    <button id="print-btn">Download pdf </button>-->
+    <div id="canvasdiv" class="row justify-content-around">
+        <canvas class="col-lg-5 col-md-6 col-sm-8"  height="500" width="500" id="myChart"> </canvas>
+        <canvas class="col-lg-5 col-md-6 col-sm-8"  height="500" width="500" id="piee" ></canvas>
+        <canvas class="col-lg-5 col-md-6 col-sm-8" style="margin-top:30px "  height="500" width="500" id="bar-chart-grouped" ></canvas>
+    </div>
+</div>
+<script>
+
+    var colours=[]
+    var mainbar=[]
+    var barboundary=[];
+    var Countries= ('<%= countries %>');
+    var Names = (' <%= names %> ')
+    var Ratings = (' <%= ratings %> ')
+    var Countofratings = (' <%= countofratings %> ')
+    var Trueage= (' <%= trueage %> ')
+    var Truecount= (' <%= truecount %> ')
+    var Falsecount= (' <%= falsecount %> ')
+    Trueage= Trueage.split(",")
+    Truecount= Truecount.split(",")
+    Falsecount= Falsecount.split(",")
+    Ratings=Ratings.split(",")
+    Countofratings=Countofratings.split(",")
+    Countries= Countries.split(",");
+    Names= Names.split(",");
+    var ctx = document.getElementById('myChart').getContext('2d');
+    function bubbleSortbar(array) {
+        var done = false;
+        while (!done) {
+            done = true;
+            for (var i = 1; i < array.length; i += 1) {
+                if (Number(array[i - 1]) > Number(array[i])) {
+                    done = false;
+                    var tmp = array[i - 1];
+                    array[i - 1] = array[i];
+                    array[i] = tmp;
+
+                     tmp = Falsecount[i - 1];
+                    Falsecount[i - 1] = Falsecount[i];
+                    Falsecount[i] = tmp;
+
+                    tmp = Truecount[i - 1];
+                    Truecount[i - 1] = Truecount[i];
+                    Truecount[i] = tmp;
+                }
+            }
+        }
+
+        return array;
+    }
+    function bubbleSortsinglebar(array) {
+        var done = false;
+        while (!done) {
+            done = true;
+            for (var i = 1; i < array.length; i += 1) {
+                if (Number(array[i - 1]) > Number(array[i])) {
+                    done = false;
+                    var tmp = array[i - 1];
+                    array[i - 1] = array[i];
+                    array[i] = tmp;
+
+                    tmp = Countofratings[i - 1];
+                    Countofratings[i - 1] = Countofratings[i];
+                    Countofratings[i] = tmp;
+                }
+            }
+        }
+
+        return array;
+    }
+async function fillmainbar()
+    {
+        await Ratings.forEach(async function(){
+            var barcolour= await getrgb();
+            mainbar.push(barcolour+0.5+')');
+            barboundary.push(barcolour+1+')');
+        })
+    }
+
+     function getrgb()
+    {
+        return 'rgb('
+            + Math.round(Math.random() *255) + ','
+            + Math.round(Math.random() *255) + ','
+            + Math.round(Math.random() *255) + ','
+            // + opacity+ ')'
+    }
+    mybar();
+    async function mybar()
+    {
+        await fillmainbar();
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: bubbleSortsinglebar(Ratings)    ,
+                datasets: [{
+                    label: 'Rating Number',
+                    data: Countofratings,
+                    backgroundColor: mainbar,
+                    borderColor: barboundary,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                maintainAspectRatio: true,
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Number Of Rating'},
+                        ticks: {
+                            beginAtZero: true,
+                            // stepSize:1,
+                        }
+                    }]
+                }
+
+            }
+        });
+    }
+
+    async function getcolour() {
+        return await hexcolour( 'rgb('
+            + Math.round(Math.random() *255) + ','
+            + Math.round(Math.random() *255) + ','
+            + Math.round(Math.random() *255) + ','
+            + ')');
+    }
+
+    function hexcolour(rgb) {
+        rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+        return (rgb && rgb.length === 4) ? "#" +
+            ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+            ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+    }
+
+async function fillcolour() {
+    await Names.forEach(async function () {
+        var colour = await getcolour();
+        colours.push(String(colour));
+    })
+}
+getpie();
+async function getpie() {
+    await fillcolour();
+    var ctx = document.getElementById('piee').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data:
+            {
+                labels: Names,
+                datasets: [{
+                    label: "Number Of reviews from country",
+                    backgroundColor:colours,
+                    data: Countries
+                }]
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio:true,
+            title: {
+                display: true,
+                text: "Number of reviews from country",
+            }
+        }
+    });
+}
+myGroupbar();
+    function myGroupbar()
+    {
+        new Chart(document.getElementById("bar-chart-grouped"), {
+            type: 'bar',
+            data: {
+                labels: bubbleSortbar(Trueage),
+                datasets: [
+                    {
+                        label: "Positive",
+                        backgroundColor: "#3e95cd",
+                        data: Truecount
+                    }, {
+                        label: "Negative",
+                        backgroundColor: "#8e5ea2",
+                        data: Falsecount
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: true,
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Number Of Reviews'},
+                        ticks: {
+                            beginAtZero: true,
+                            // stepSize:1,
+                        }
+                    }]
+                }
+
+            }
+        });
+    }
+
+
+</script>
+
+
+<%- include("Partials/footer")%>

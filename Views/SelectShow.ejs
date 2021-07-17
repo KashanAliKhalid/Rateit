@@ -1,0 +1,25 @@
+<%- include("Partials/Header") %>
+<%- include("Partials/Sidenav") %>
+<link rel="stylesheet" href="/selectshow.css">
+<div onclick="closeNav()">
+    <div  class="smalldiv col-xl-3 col-lg-4 col-md-12 col-sm-12 col-md-12 col-md-6">
+        <center><img class="logo img-fluid"   src="logo2.png"></center>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 d-flex flex-column">
+                    <form method="post" action="/selectshow" >
+                        <div  class="d-flex flex-column textareas justify-content-center align-items-center">
+                            <input class="ShowField" name="showname" type="text" name="show" placeholder="Show Name">
+                            <button id="generate" class=" generatedata" on onclick="buttonHover()"  type="submit">Generate Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<%- include("Partials/footer.ejs") %>

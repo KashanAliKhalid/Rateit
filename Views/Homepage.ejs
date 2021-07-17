@@ -1,0 +1,194 @@
+<%- include("Partials/Header")%>
+<%- include("Partials/Sidenav")%>
+<Script>
+    function displaybutton1()
+    {
+        document.getElementById("buttondiv1").style.display= "block";
+        document.getElementById("buttondiv1").style.background= "black";
+    }
+
+    function hidebutton1()
+    {
+        document.getElementById("buttondiv1").style.display= "none";
+    }
+
+    function displaybutton2()
+    {
+        document.getElementById("buttondiv2").style.display= "block";
+        document.getElementById("buttondiv2").style.background= "black";
+    }
+
+    function hidebutton2()
+    {
+        document.getElementById("buttondiv2").style.display= "none";
+    }
+
+    function displaybutton3()
+    {
+        document.getElementById("buttondiv3").style.display= "block";
+        document.getElementById("buttondiv3").style.background= "black";
+    }
+
+    function hidebutton3()
+    {
+        document.getElementById("buttondiv3").style.display= "none";
+    }
+
+    function displaybutton4()
+    {
+        document.getElementById("buttondiv4").style.display= "block";
+        document.getElementById("buttondiv4").style.background= "black";
+    }
+
+    function hidebutton4()
+    {
+        document.getElementById("buttondiv4").style.display= "none";
+    }
+
+    function displaybutton5()
+    {
+        document.getElementById("buttondiv5").style.display= "block";
+        document.getElementById("buttondiv5").style.background= "black";
+    }
+
+    function hidebutton5()
+    {
+        document.getElementById("buttondiv5").style.display= "none";
+    }
+
+    function displaybutton6()
+    {
+        document.getElementById("buttondiv6").style.display= "block";
+        document.getElementById("buttondiv6").style.background= "black";
+    }
+
+    function hidebutton6()
+    {
+        document.getElementById("buttondiv6").style.display= "none";
+    }
+
+
+</Script>
+<link rel="stylesheet" type="text/css" href="/Home.css">
+<div onclick="closeNav()">
+    <div style="margin-top: 60.4px;" id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="https://i.pinimg.com/originals/93/17/c3/9317c3fb92d45a42a911ad1a2140f8b1.jpg" class="sliderpicture d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item ">
+                <img  src="https://media.playstation.com/is/image/SCEA/playstaton-video-john-wick-3-banner-01-us-04jun19?$native_xxl_nt$" class="d-block w-100 sliderpicture" alt="...">
+            </div>
+            <div class="carousel-item ">
+                <img src="https://i.redd.it/8yonn7m4bfk31.jpg" class="sliderpicture d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item ">
+                <img src="https://kanejason.files.wordpress.com/2019/07/flm_spidermanffh_banner.png" class="sliderpicture d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item ">
+                <img src="http://soundtrackfest.com/wp-content/uploads/2019/12/LionKing2019-LiveToPicture-WorldPremiere-Banner.jpg" class="sliderpicture d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container reviewcontainer">
+        <strong><h3 class="h3"> <span>T</span>op <span>R</span>eviews</h3></strong>
+
+        <div class="row">
+            <div  class="col-lg-2 col-md-4 col-sm-4 col-6">
+                <div onmouseover="displaybutton1()" onmouseout="hidebutton1()"  class="smallreview1 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv1">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext">
+                    The Batman <br> <span>June 25, 2021</span>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6" >
+                <div onmouseover="displaybutton2()" onmouseout="hidebutton2()"  class="smallreview2 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv2">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext">Bad Boys for life <br> <span>January 17, 2020</span>
+                </div>
+            </div>
+
+            <div  class="col-lg-2 col-md-4 col-sm-4 col-6" >
+                <div onmouseover="displaybutton3()" onmouseout="hidebutton3()"  class="smallreview3 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv3">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext">The Suicide Squad <br> <span>August 6, 2021</span>
+                </div>
+            </div>
+
+            <div  class="col-lg-2 col-md-4 col-sm-4 col-6" >
+                <div onmouseover="displaybutton4()" onmouseout="hidebutton4()"  class="smallreview4 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv4">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext">Doctor Sleep <br> <span>November 8, 2019</span>
+                </div>
+            </div>
+
+
+            <div  class="col-lg-2 col-md-4 col-sm-4 col-6" >
+                <div onmouseover="displaybutton5()" onmouseout="hidebutton5()"  class="smallreview5 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv5">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext">No Time To Die <br> <span>April 8, 2020</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6" >
+                <div onmouseover="displaybutton6()" onmouseout="hidebutton6()"  class="smallreview6 d-flex flex-column justify-content-center align-items-center" >
+                    <div id="buttondiv6">
+                        <button class="reviewbutton"> MORE INFO</button> <br>
+                        <button class="reviewbutton">WATCH VIDEO</button> <br>
+                        <button class="reviewbutton">BUY TICKETS</button>
+                    </div>
+                </div>
+                <div class="reviewtext"> Terminator: Dark Fate <br> <span>November 1, 2019</span>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<%- include("Partials/footer")%>
