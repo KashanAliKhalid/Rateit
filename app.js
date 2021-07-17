@@ -33,7 +33,7 @@ showScehma.index(
 var Show= mongoose.model("Show",showScehma);
 
 app.get("/", function (req,res) {
-   res.render("Homepage")
+   res.render("Homepage.ejs")
 
 });
 app.post("/selectshow",function (req,res) {
