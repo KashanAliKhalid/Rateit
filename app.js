@@ -54,7 +54,7 @@ Show.find({show:showname},function (err, ShowReturn) {
 
 
 app.get("/selectshow",function (req,res) {
-   res.render("Selectshow");
+   res.render("SelectShow");
 });
 
 app.post("/adminpanel" , function (req, res) {
